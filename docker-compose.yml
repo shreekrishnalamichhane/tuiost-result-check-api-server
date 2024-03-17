@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  scraper:
+    env_file:
+      - ./.env
+    build: ./
+    ports:
+      - "7000:4000"
+    volumes:
+      - ./cache:/app/cache
+      - ./log:/app/log
+    restart: on-failure
